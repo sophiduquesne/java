@@ -7,3 +7,8 @@ function trocarFrase(){
     document.body.style.backgroundColor= "lightgreen";
     fraseAtual.innerHTML= "<img src=\'img/rapunzel.jpg\' />"
 }
+
+function trocarClasse(){
+    var fraseAtual=document.getElementById("frase");
+    fraseAtual.className="h1_2";
+}
