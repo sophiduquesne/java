@@ -9,3 +9,16 @@
 img {
     width: 1000px;
 }
+
+button {
+    background-color:cornflowerblue;
+    text-decoration: none;
+    border: 5px;
+    border-radius: 10px;
+}
+
+button :hover {
+    background-color: darkblue;
+    border: 5px;
+    border-radius: 10px;
+}

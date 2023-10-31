@@ -1,47 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Calculadora</title> 
     <script src="js/myscript.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/style.css">
-
     <script>
-        function somar(){
-    let campoN1 = document.getElementById("n1")
-    let valorN1 = parseInt (campon1.value)
+        function somar () {
+            let campoN1 = document.getElementById("n1")
+            let valorN1 = parseInt(campoN1.value)
 
-    let campoN2 = document.getElementById ("n2")
-    let valorN2 = parseInt (campoN2.value)
+            let campoN2 = document.getElementById("n2")
+            let valorN2 = parseInt(campoN2.value)
 
-    let resultadoDaSoma = valorN1 + valorN2
+            let resultadoDaSoma = valorN1 + valorN2
+            let campoResultado = document.getElementById("resultado")
+            campoResultado.value = resultadoDaSoma
+        }
 
-    let campoResultado = document.getElementById ("resultado")
-    campoResultado.value = resultadoDaSoma
-}
+            function subtrair () {
+            let campoN1 = document.getElementById("n1")
+            let valorN1 = parseInt(campoN1.value)
 
-function subtrair (){
-    let campoN1 = document.getElementById("n1")
-    let valorN1 = parseInt (campon1.value)
+            let campoN2 = document.getElementById("n2")
+            let valorN2 = parseInt(campoN2.value)
 
-    let campoN2 = document.getElementById ("n2")
-    let valorN2 = parseInt (campon2.value)
+            let resultadoDaSubtração = valorN1 - valorN2
+            let campoResultado = document.getElementById("resultado")
+            campoResultado.value = resultadoDaSubtração
+        }
 
-    let resultadoDaSoma = valorN1 - valorN2
+        function multiplicação () {
+            let campoN1 = document.getElementById("n1")
+            let valorN1 = parseInt(campoN1.value)
 
-    let campoResultado = document.getElementById ("resultado")
-    campoResultado.value = resultadoDaSoma
-}
+            let campoN2 = document.getElementById("n2")
+            let valorN2 = parseInt(campoN2.value)
+
+            let resultadoDaMultiplicação = valorN1 * valorN2
+            let campoResultado = document.getElementById("resultado")
+            campoResultado.value = resultadoDaMultiplicação
+        }
+
+        function divisão () {
+            let campoN1 = document.getElementById("n1")
+            let valorN1 = parseInt(campoN1.value)
+
+            let campoN2 = document.getElementById("n2")
+            let valorN2 = parseInt(campoN2.value)
+
+            let resultadoDaDivisão = valorN1 / valorN2
+            let campoResultado = document.getElementById("resultado")
+            campoResultado.value = resultadoDaDivisão
+        }
     </script>
 </head>
 <body>
     <h1>Calculadora</h1>
-    <input id="n1" type="number" placeholder="123"> 
-    <input id="n2" type="number" placeholder="123">
+    <input type="number" placeholder="123" id="n1">
+    <input type="number" placeholder="123" id="n2"> 
     =
     <input type="number" readonly id="resultado"> <br>
     <button onclick="somar();">+</button>
-    <button onclick="subtrair();">-</button>
+    <button onclick="subtrair();">-</button> 
+    <button onclick="multiplicação();">*</button>
+    <button onclick="divisão();">/</button> 
+        
 </body>
 </html>
