@@ -32,21 +32,42 @@
     }
     //trabalhandoNúmeros()
 
+    function validar(){
+        var email = gebi("idEmail").value;
+        var senha = gebi("idSenha").value;
+
+        if(email.length < 5){
+            alert("email está errado!")
+            return 
+        }
+
+        if (senha.length< 3){
+            alert ("senha deve conter mais que três caracteres!")
+            return 
+        }
+
+        gebi ("meuForm").submit()
+        alert ("Sucesso!")
+    }
+
     function maiuscula(){
         var email = gebi("idEmail").value;
+        var emailEmMaiusculas = email.toUpperCase ();
+        console.log (emailEmMaiusculas)
         gebi ("idEmail").value = email.toUpperCase();
     }
 
     </script>
+    <script type="text/javascript" src="js/myscript.js"></script>
 </head>
 <body>
     <center>
         <h1>Validar</h1>
-        <form>
+        <form id="meuForm" action="http://jkorpela.fi/cgi-bin/echo.cgi">
             <fieldset align="center" style="width: 270px;">
                 <legend>Login:</legend>
-                Email: <input type="text" id="idEmail" onblur="maiuscula()"><br>
-                Senha <input type="password" id="idSenha"> <br>
+                Email: <input type="text" id="idEmail" required onblur="maiuscula()" name="email"><br>
+                Senha <input type="password" id="idSenha" name="senha"> <br>
                 <input type="button" value="Enviar" onclick="validar();">
             </fieldset>
         </form>

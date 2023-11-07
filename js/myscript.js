@@ -12,3 +12,7 @@ function trocarClasse(){
     var fraseAtual=document.getElementById("frase");
     fraseAtual.className="h1_2";
 }
+
+function gebi(id){
+    return document.getElementById(id)
+}
