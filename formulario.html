@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+
+        <script src="js/myscript.js" type="text/javascript"></script>
+        <script>
+
+            function validar(){
+                var nome = gebi("idNome").value
+                var email = gebi("idEmail").value
+                var senha = gebi("idSenha").value
+                var idade = gebi("idIdade").value
+                var peso = gebi ("idPeso").value
+                var altura = gebi ("idAltura").value
+
+                if (email != "nada@nada.com") {
+                    alert("email está errado!")
+                    gebi ("idEmail").focus();
+                    return
+                }
+
+                if ((senha !== "1234")&&(senha !== "4321")) {
+                    alert("senha incorreta")
+                    gebi ("idSenha").focus();
+                    return
+                }
+
+                if (idade < 10) {
+                    alert("idade deve ser maior que 10!")
+                    gebi ("idIdade").focus();
+                    return
+                }
+
+                if ((peso < 40) && (peso > 150)) {
+                    alert("peso deve etar entre 40 em 150")
+                    gebi ("idPeso").focus();
+                    return
+                }
+
+                if (nome != "fulano") {
+                    alert ("nome deve ser fulano!")
+                    gebi ("idNome").focus();
+                    return
+                }
+
+                if (altura < 1.40) {
+                    alert ("Sua altura de ser maior que 1,40!")
+                    gebi ("idAltura").focus();
+                    return
+                }
+
+                gebi("meuForm").submit()
+                alert("Sucesso!")
+            }
+        </script>
+    </head>
+
+    <body>
+        <center>
+            <h1>Validar</h1>
+			<form id="meuForm" action="http://jkorpela.fi/cgi-bin/echo.cgi">
+				<fieldset align="center" style="width:270px"> 
+					<legend>Login:</legend>
+                    Nome: <input type="text" name="Nome" id="idNome" required autofocus> <br>
+					Email: <input id="idEmail"  name="email" type="email" required><br>
+					Senha: <input id="idSenha" name="senha" type="password" required><br> 
+                    Idade: <input id="idIdade" name="idade" type="number"  step="1" required><br> 
+                    Peso: <input type="number" name="Peso" id="idPeso" step="0.1" required> <br>
+                    Altura: <input type="number" id="idAltura" name="Altura" required>
+                    <input type="button" value="Enviar" onclick="validar();"> 
+				</fieldset> 
+			</form> 
+		</center>
+    </body>
+</html>
